@@ -36,4 +36,4 @@ I focused on making the math feel intuitive:
 I always wanted to apply the HTML, CSS, and JS I’ve been studying to a real-world UI. The goal was to recreate the Apple calculator from scratch and prove that even a "simple" project requires a surprising amount of logic.  
 
 
-**Live Demo:** [Click here to view the app on Vercel]([your-vercel-link-here](https://kalkulator-three-wheat.vercel.app/))
+**Live Demo:** [Click here to view the app on Vercel](https://kalkulator-three-wheat.vercel.app/)
