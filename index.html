@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KalKulator</title>
+    <link rel="stylesheet" href="style.css?v=1">
+</head>
+
+<body data-theme="dark"> 
+    <nav class="header-bar">
+        <span class="nav-title">Kalkulator</span>
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <div class="icon-circle">
+            <svg class="moon-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </div>
+    </div>
+</nav>
+
+    <main class="main-content">
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="calculator">
+            <div class="display-pill">
+                <div id="output">0</div>
+            </div>
+            
+            <div class="buttons">
+                <button class="btn gray" onclick="clearDisplay()">AC</button>
+                <button class="btn gray" onclick="applyPercentage()">%</button>
+                <button class="btn gray" onclick="deleteLast()">DEL</button>
+                <button class="btn orange btn-divide" onclick="setOperator('/', this)">÷</button>
+                
+                <button class="btn light-gray" onclick="appendValue('7')">7</button>
+                <button class="btn light-gray" onclick="appendValue('8')">8</button>
+                <button class="btn light-gray" onclick="appendValue('9')">9</button>
+                <button class="btn orange btn-multiply" onclick="setOperator('*', this)">×</button>
+                
+                <button class="btn light-gray" onclick="appendValue('4')">4</button>
+                <button class="btn light-gray" onclick="appendValue('5')">5</button>
+                <button class="btn light-gray" onclick="appendValue('6')">6</button>
+                <button class="btn orange btn-minus" onclick="setOperator('-', this)">-</button>
+                
+                <button class="btn light-gray" onclick="appendValue('1')">1</button>
+                <button class="btn light-gray" onclick="appendValue('2')">2</button>
+                <button class="btn light-gray" onclick="appendValue('3')">3</button>
+                <button class="btn orange btn-plus" onclick="setOperator('+', this)">+</button>
+                
+                <button class="btn light-gray zero" onclick="appendValue('0')">0</button>
+                <button class="btn light-gray" onclick="appendValue('.')">.</button>
+                <button class="btn orange btn-equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <pre class="design-credit">        AN APPLE-INSPIRED CALCULATOR</pre>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
