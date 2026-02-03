@@ -312,7 +312,7 @@ button, a {
     /* 3. Display Pill Alignment */
     .display-pill {
         height: 100px;
-        width: 240px;    
+        width: 245px;    
         margin-bottom: 20px;
         padding: 0 15px;
         display: flex;
