@@ -3,7 +3,7 @@
 
 /* Define Colors for Dark Mode (Default) */
 [data-theme="dark"] {
-    --bg-color: #090808;
+    --bg-color: #0d0c0c;
     --calc-body: #000000;
     --pill-bg: #000000;
     --text-color: #ffffff;
@@ -13,12 +13,12 @@
     --nav-text: #ffffff;
     --active-bg: #ffffff;
     --active-text: #ff9500;
-    --shadow-box-color: rgba(94, 94, 94, 0.15);
+    --shadow-box-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Define Colors for Light Mode */
 [data-theme="light"] {
-    --bg-color: #d4d4d4;   /* Matches button gray as requested */
+    --bg-color: #c9c9c9;   /* Matches button gray as requested */
     --calc-body: #ffffff;  /* Calculator becomes white */
     --pill-bg: #ffffff;    /* Pill matches body */
     --text-color: #000000; /* Text becomes black */
@@ -28,7 +28,7 @@
     --nav-text: #000000;
     --active-bg: #000000;  /* Flipped orange for highlight */
     --active-text: #ffffff;
-    --shadow-box-color: rgba(255, 255, 255, 0.2);
+    --shadow-box-color: rgba(192, 192, 192, 0.2);
 }
 
 * {
@@ -337,15 +337,15 @@ button, a {
     .buttons {
         display: grid;
         /* Force 4 equal columns based on your button size (48px) */
-        grid-template-columns: repeat(4, 48px); 
-        gap: 12px; /* Sufficient breathing room */
+        grid-template-columns: repeat(4, 50px); 
+        gap: 10px; /* Sufficient breathing room */
         width: auto; /* Shrinks to fit the 4 columns exactly */
         justify-content: center;
     }
 
     .btn {
-        height: 48px; 
-        width: 48px;
+        height: 50px; 
+        width: 50px;
         font-size: 1.2rem;
         /* Ensure content is perfectly centered inside the circle */
         display: flex;

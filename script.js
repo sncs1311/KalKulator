@@ -38,7 +38,7 @@ function scaleOutputFont(length) {
     if (!display) return;
     
     const isMobile = window.innerWidth <= 480;
-    
+
     if (isMobile) {
         // MOBILE SCALING (Lower values to prevent overflow)
         if (length > 16) {
@@ -46,7 +46,7 @@ function scaleOutputFont(length) {
         } else if (length > 13) {
             display.style.fontSize = "1.5rem";
         } else if (length > 10) {
-            display.style.fontSize = "1.8rem";
+            display.style.fontSize = "1.9rem";
         } else if (length > 8) {
             display.style.fontSize = "2.2rem";
         } else if (length > 6) {
@@ -221,7 +221,7 @@ document.addEventListener('keydown', (event) => {
     if (['+', '-', '*', '/'].includes(key)) {
         const buttons = Array.from(document.querySelectorAll('.orange'));
         const targetButton = buttons.find(btn => 
-            btn.innerText === (key === '*' ? '×' : key === '/' ? '÷' : key)
+            btn.innerText === (key === '*' ? 'x' : key === '/' ? '÷' : key)
         );
         setOperator(key, targetButton);
     }
