@@ -37,19 +37,38 @@ function scaleOutputFont(length) {
     const display = document.getElementById('output');
     if (!display) return;
     
-    // Smooth scaling steps for a high-end feel
-    if (length > 16) {
-        display.style.fontSize = "1.75rem";
-    } else if (length > 13) {
-        display.style.fontSize = "2rem";
-    } else if (length > 10) {
-        display.style.fontSize = "2.5rem";
-    } else if (length > 8) {
-        display.style.fontSize = "3.25rem";
-    } else if (length > 6) {
-        display.style.fontSize = "4rem";
+    const isMobile = window.innerWidth <= 480;
+    
+    if (isMobile) {
+        // MOBILE SCALING (Lower values to prevent overflow)
+        if (length > 16) {
+            display.style.fontSize = "1.2rem";
+        } else if (length > 13) {
+            display.style.fontSize = "1.5rem";
+        } else if (length > 10) {
+            display.style.fontSize = "1.8rem";
+        } else if (length > 8) {
+            display.style.fontSize = "2.2rem";
+        } else if (length > 6) {
+            display.style.fontSize = "2.8rem";
+        } else {
+            display.style.fontSize = "3.5rem"; // Max size for mobile
+        }
     } else {
-        display.style.fontSize = "4.5rem"; 
+        // DESKTOP SCALING (Your original values)
+        if (length > 16) {
+            display.style.fontSize = "1.7rem";
+        } else if (length > 13) {
+            display.style.fontSize = "2rem";
+        } else if (length > 10) {
+            display.style.fontSize = "2.5rem";
+        } else if (length > 8) {
+            display.style.fontSize = "3.25rem";
+        } else if (length > 6) {
+            display.style.fontSize = "4rem";
+        } else {
+            display.style.fontSize = "4.5rem"; 
+        }
     }
 }
 

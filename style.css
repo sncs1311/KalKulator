@@ -13,7 +13,7 @@
     --nav-text: #ffffff;
     --active-bg: #ffffff;
     --active-text: #ff9500;
-    --shadow-box-color: rgba(255, 255, 255, 0.15);
+    --shadow-box-color: rgba(94, 94, 94, 0.15);
 }
 
 /* Define Colors for Light Mode */
@@ -28,7 +28,7 @@
     --nav-text: #000000;
     --active-bg: #000000;  /* Flipped orange for highlight */
     --active-text: #ffffff;
-    --shadow-box-color: rgba(0, 0, 0, 0.2);
+    --shadow-box-color: rgba(255, 255, 255, 0.2);
 }
 
 * {
@@ -103,6 +103,14 @@ body {
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease;
+}
+
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between calculator and the text below */
 }
 
 .calculator {
@@ -244,6 +252,8 @@ body {
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-align: center;
+    width: 100%; /* Ensures text-align center works */
 }
 
 /* The !important forces the browser to prioritize this over its default blue box */
@@ -258,26 +268,91 @@ button, a {
 }
 
 /* Media Query for Mobile Screens */
+/* Media Query for Mobile Screens */
 @media (max-width: 480px) {
-    .calculator {
-        transform: scale(0.85); /* Shrinks the entire box and its contents by 15% */
-        transform-origin: center top; /* Keeps it centered but pulls it toward the top */
-        margin-top: 20px; /* Adjusts spacing from the header after scaling */
+    body {
+        /* Ensure the body is a flex container to keep everything centered */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
     }
 
-    /* If the scaling makes it look too small, you can also shrink specific parts: */
+    /* 1. Perfect Centering for the Outer Box */
+    .calculator {
+        transform: none; 
+        width: 275px;      /* Fixed width ensures alignment never breaks */
+        padding: 20px;
+        margin: 80px auto 0 auto; /* Centered horizontally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 2. Alignment fix for the Background Halo */
+    .calculator::before {
+        filter: blur(10px);
+        top: -12px; left: -12px; right: -12px; bottom: -12px;
+    }
+
+    /* 3. Display Pill Alignment */
+    .display-pill {
+        height: 100px;
+        width: 260px;    
+        margin-bottom: 20px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
     #output {
-        font-size: 4rem; /* Reduced from 5rem to fit better */
+        font-size: 3.8rem; 
+        letter-spacing: -1px;
+        width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: nowrap; 
+    overflow: hidden; /* Clips any accidental overflow */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    }
+
+    /* 4. Perfect Button Alignment Logic */
+    .buttons {
+        display: grid;
+        /* Force 4 equal columns based on your button size (48px) */
+        grid-template-columns: repeat(4, 48px); 
+        gap: 12px; /* Sufficient breathing room */
+        width: auto; /* Shrinks to fit the 4 columns exactly */
+        justify-content: center;
     }
 
     .btn {
-        height: 60px; /* Reduced from 68px */
-        width: 60px;  /* Reduced from 68px */
-        font-size: 1.3rem; /* Slightly smaller text */
+        height: 48px; 
+        width: 48px;
+        font-size: 1.2rem;
+        /* Ensure content is perfectly centered inside the circle */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .display-pill {
-        height: 100px; /* Reduced from 120px */
-        width: 250px;  /* Reduced from 282px */
+    /* 5. The Zero Pill Fix */
+    .zero {
+        grid-column: span 2;
+        /* Width = (2 buttons * 48px) + (1 gap * 12px) */
+        width: 108px !important; 
+        border-radius: 30px;
+        padding-left: 18px; 
+        justify-content: flex-start; /* Classic Apple alignment */
+    }
+
+    /* 6. Footer adjustment */
+    .design-credit {
+        margin-top: 25px;
+        font-size: 0.6rem;
+        text-align: center;
     }
 }
