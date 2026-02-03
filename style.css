@@ -111,6 +111,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 30px; /* Space between calculator and the text below */
+
 }
 
 .calculator {
@@ -278,8 +279,21 @@ button, a {
         padding: 20px 0;
     }
 
+    .main-content-wrapper {
+        /* Negative Y moves it UP. -50px is a good starting point to 
+           clear the visual weight of the bottom text. */
+        transform: translateY(-50px); 
+        
+        /* Ensure the wrapper itself stays centered horizontally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
     /* 1. Perfect Centering for the Outer Box */
     .calculator {
+        margin-top: 0 !important;
         transform: none; 
         width: 275px;      /* Fixed width ensures alignment never breaks */
         padding: 20px;
